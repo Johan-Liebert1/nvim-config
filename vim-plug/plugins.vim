@@ -9,6 +9,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'jiangmiao/auto-pairs'
     
     Plug 'dracula/vim'
+    Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+
     Plug 'ryanoasis/vim-devicons'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
@@ -23,4 +25,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-rooter' 
 call plug#end()

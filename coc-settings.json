@@ -9,6 +9,7 @@
   [
     "UltiSnips",
     "~/.config/nvim/utils/snips"
-  ]
+  ],
 
+  "diagnostic.checkCurrentLine": true
 }

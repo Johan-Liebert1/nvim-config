@@ -2,6 +2,8 @@
 vnoremap <silent><c-s> <c-c>:update<cr>gv
 inoremap <silent><c-s> <c-o>:update<cr>
 
+:inoremap jj <Esc>
+
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
@@ -30,3 +32,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" ctrl + shift + l to clear the last selection highlight
+nnoremap <C-\> :noh<Enter>
+
+" ctrl + b to toggle NERDTree
+nnoremap <M-b> :NERDTreeToggle <Enter>
+
+" ctrl + p to fuzzy find file
+nnoremap <C-p> :FZF <Enter>
