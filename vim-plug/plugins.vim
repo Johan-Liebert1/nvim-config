@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     Plug 'dracula/vim'
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    Plug 'joshdick/onedark.vim' 
 
     Plug 'ryanoasis/vim-devicons'
     Plug 'SirVer/ultisnips'
