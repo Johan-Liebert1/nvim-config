@@ -1,8 +1,3 @@
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean-community'
-let g:colors_name = 'material'
-colorscheme material
-
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
 if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
@@ -16,3 +11,7 @@ if (has('termguicolors'))
 endif
 
 
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'ocean-community'
+let g:colors_name = 'material'
+colorscheme material

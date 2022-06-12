@@ -2,6 +2,18 @@
 vnoremap <silent><c-s> <c-c>:update<cr>gv
 inoremap <silent><c-s> <c-o>:update<cr>
 
+" ctrl + ] to go to the next buffer and ctrl + [ to go the previous buffer
+noremap <C-]> :bn<Enter>
+noremap <C-[> :bp<Enter>
+
+" save and close with ctrl + x + s
+inoremap <C-x>s :wq<Enter>
+nnoremap <C-x>s :wq<Enter>
+
+" close with ctrl + x + x
+inoremap <C-x>x :q<Enter>
+nnoremap <C-x>x :q<Enter>
+
 :inoremap jj <Esc>
 
 " Better nav for omnicomplete

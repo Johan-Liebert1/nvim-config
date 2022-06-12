@@ -29,4 +29,17 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter' 
+    Plug 'pangloss/vim-javascript'
+    
+    " For Tab line
+    Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+    Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+
+    " For Multiple Cursors
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+    
+    Plug 'morhetz/gruvbox' 
+
+    " Prettier
+    Plug 'sbdchd/neoformat'    
 call plug#end()
