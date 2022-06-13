@@ -14,4 +14,5 @@ endif
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean-community'
 let g:colors_name = 'material'
+
 colorscheme material

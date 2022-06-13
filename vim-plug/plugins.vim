@@ -1,5 +1,8 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
-	" Better syntax support
+    " Tree sitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    
+    " Better syntax support
 	Plug 'sheerun/vim-polyglot'
 
 	" File explorer

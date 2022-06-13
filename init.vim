@@ -9,7 +9,7 @@ endif
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/vim-javascript.vim
+source $HOME/.config/nvim/plug-config/prettier.vim
+source $HOME/.config/nvim/plug-config/fzf.vim
 
-" In your init.lua or init.vim
-set termguicolors
-lua << EOF
+

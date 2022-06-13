@@ -1,4 +1,5 @@
 set relativenumber
+set nu rnu
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
