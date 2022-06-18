@@ -1,6 +1,8 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
     " Tree sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'p00f/nvim-ts-rainbow'
+    Plug 'nvim-treesitter/playground'
     
     " Better syntax support
 	Plug 'sheerun/vim-polyglot'
