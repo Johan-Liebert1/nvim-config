@@ -12,4 +12,5 @@ source $HOME/.config/nvim/plug-config/vim-javascript.vim
 source $HOME/.config/nvim/plug-config/prettier.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 
-
+" lua configs
+luafile $HOME/.config/nvim/lua/plug-colorizer.lua

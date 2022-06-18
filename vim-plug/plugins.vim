@@ -19,11 +19,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     
+    " ============================ coc ============================
     " Stable version of coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
     " Keeping up to date with master
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc-eslint'
+    " ============================ coc ============================
     
     " status line
     Plug 'vim-airline/vim-airline'
@@ -45,4 +47,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Prettier
     Plug 'sbdchd/neoformat'    
+
+    " colorizer
+    Plug 'norcalli/nvim-colorizer.lua'
+
+    Plug 'Johan-Liebert1/nvcode-color-schemes.vim'
 call plug#end()
