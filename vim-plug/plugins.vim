@@ -1,4 +1,10 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
+    " Git integration
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
+
     " Tree sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'p00f/nvim-ts-rainbow'
@@ -54,4 +60,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'norcalli/nvim-colorizer.lua'
 
     Plug 'Johan-Liebert1/nvcode-color-schemes.vim'
+    
+    " Black formatter
+    Plug 'ambv/black'    
 call plug#end()
