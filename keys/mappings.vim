@@ -3,16 +3,14 @@ vnoremap <silent><c-s> <c-c>:update<cr>gv
 inoremap <silent><c-s> <c-o>:update<cr>
 
 " ctrl + ] to go to the next buffer and ctrl + [ to go the previous buffer
-noremap <C-]> :bn<Enter>
-noremap <C-[> :bp<Enter>
+noremap <C-]> :bn<CR>
+noremap <C-[> :bp<CR>
 
 " save and close with ctrl + x + s
-inoremap <C-x>s :wq<Enter>
-nnoremap <C-x>s :wq<Enter>
+nnoremap <C-x>s :wq<CR>
 
 " close with ctrl + x + x
-inoremap <C-x>x :q<Enter>
-nnoremap <C-x>x :q<Enter>
+nnoremap <C-x>x :bd<CR>
 
 :inoremap jj <Esc>
 
@@ -46,10 +44,15 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " ctrl + shift + l to clear the last selection highlight
-nnoremap <C-\> :noh<Enter>
+nnoremap <C-\> :noh<CR>
 
 " ctrl + b to toggle NERDTree
-nnoremap <M-b> :NERDTreeToggle <Enter>
+nnoremap <M-b> :NERDTreeToggle <CR>
 
 " ctrl + p to fuzzy find file
-nnoremap <C-p> :FZF <Enter>
+nnoremap <C-p> :FZF <CR>
+
+" ctrl + shift + j to move line one line down
+nnoremap <C-M-j> :m +1 <CR>
+" ctrl + shift + k to move line on line up 
+nnoremap <C-M-k> :m -2 <CR>

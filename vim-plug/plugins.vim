@@ -53,9 +53,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     Plug 'morhetz/gruvbox' 
 
-    " Prettier
-    Plug 'sbdchd/neoformat'    
-
     " colorizer
     Plug 'norcalli/nvim-colorizer.lua'
 

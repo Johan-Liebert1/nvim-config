@@ -9,7 +9,8 @@
       "yaml",
       "json",
       "python",
-      "rust"
+      "rust",
+    "typescriptreact"
   ],
 
   // python config

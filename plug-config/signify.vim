@@ -6,8 +6,8 @@ let g:signify_line_highlight = 0
 let g:signify_number_highlight =  0
 
 " no numbers
-let g:signify_sign_show_count = 1
-let g:signify_sign_show_text = 1
+let g:signify_sign_show_count = 0
+let g:signify_sign_show_text = 0
 
 highlight SignifySignAdd    ctermfg=green  guifg=#00ff00 cterm=NONE gui=NONE
 highlight SignifySignDelete ctermfg=red    guifg=#ff0000 cterm=NONE gui=NONE

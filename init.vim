@@ -11,9 +11,9 @@ source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/vim-javascript.vim
 source $HOME/.config/nvim/plug-config/prettier.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
-luafile $HOME/.config/nvim/plug-config/treesitter.lua
 source $HOME/.config/nvim/plug-config/rainbowcols.vim
 source $HOME/.config/nvim/plug-config/signify.vim
 
 " lua configs
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+luafile $HOME/.config/nvim/plug-config/treesitter.lua
