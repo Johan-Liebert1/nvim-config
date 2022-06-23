@@ -17,3 +17,4 @@ source $HOME/.config/nvim/plug-config/signify.vim
 " lua configs
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/plug-config/treesitter.lua
+luafile $HOME/.config/nvim/lua/bufferLine.lua

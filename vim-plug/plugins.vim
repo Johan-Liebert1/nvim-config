@@ -20,7 +20,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'jiangmiao/auto-pairs'
     
     Plug 'dracula/vim'
-    Plug 'kaicataldo/material.vim', { 'branch': 'main' }
     Plug 'joshdick/onedark.vim' 
 
     Plug 'ryanoasis/vim-devicons'
@@ -47,11 +46,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " For Tab line
     Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+    Plug 'moll/vim-bbye'
 
     " For Multiple Cursors
     Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-    
-    Plug 'morhetz/gruvbox' 
 
     " colorizer
     Plug 'norcalli/nvim-colorizer.lua'
