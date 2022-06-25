@@ -1,15 +1,15 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
-      "css",
-      "markdown",
-      "javascript",
-      "typescript",
-      "graphql",
-      "html",
-      "yaml",
-      "json",
-      "python",
-      "rust",
+    "css",
+    "markdown",
+    "javascript",
+    "typescript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python",
+    "rust",
     "typescriptreact"
   ],
 
@@ -45,12 +45,8 @@
     "__pycache__",
     "venv"
   ],
-
-  "snippets.ultisnips.directories":
-  [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ],
+  "python.formatting.provider": "black",
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
 
   "diagnostic.checkCurrentLine": true
 }

@@ -1,9 +1,9 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
     " Git integration
-    Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
+    Plug 'lewis6991/gitsigns.nvim'
 
     " Tree sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

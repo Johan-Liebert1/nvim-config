@@ -23,9 +23,9 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
+  set signcolumn=auto
 else
-  set signcolumn=yes
+  set signcolumn=auto
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
