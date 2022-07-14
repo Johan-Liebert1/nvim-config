@@ -49,8 +49,8 @@ nnoremap <C-\> :noh<CR>
 " ctrl + b to toggle NERDTree
 nnoremap <M-b> :NERDTreeToggle <CR>
 
-" ctrl + p to fuzzy find file
-nnoremap <C-p> :FZF <CR>
+" ctrl + f for all file content search
+nnoremap <C-f> :Rg <CR>
 
 " ctrl + shift + j to move line one line down
 nnoremap <C-M-j> :m +1 <CR>

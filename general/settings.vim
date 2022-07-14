@@ -1,5 +1,6 @@
 set relativenumber
 set nu rnu
+autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
@@ -18,6 +19,7 @@ set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set ttyfast                 " Speed up scrolling in Vim
+" set nowrap
 
 " custom commands
 :command ClsAll w | %bd | e#
