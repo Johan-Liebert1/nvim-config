@@ -48,5 +48,8 @@
   "python.formatting.provider": "black",
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
 
+  // rust
+  "rust-analyzer.enable": true,
+
   "diagnostic.checkCurrentLine": true
 }

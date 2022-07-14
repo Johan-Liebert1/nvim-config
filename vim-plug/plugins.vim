@@ -7,8 +7,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Tree sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'p00f/nvim-ts-rainbow'
-    Plug 'nvim-treesitter/playground'
+    Plug 'p00f/nvim-ts-rainbow' " Rainbow parenthesis
+    Plug 'nvim-treesitter/playground' " For checking the curent token, getting all tokens etc...
     
     " Better syntax support
 	Plug 'sheerun/vim-polyglot'
@@ -28,10 +28,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     " ============================ coc ============================
     " Stable version of coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Keeping up to date with master
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-eslint'
+    " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    " Plug 'neoclide/coc-eslint'
     " ============================ coc ============================
     
     " status line
@@ -58,4 +58,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     " Black formatter
     Plug 'ambv/black'    
+
+    " LSP
+    Plug 'neovim/nvim-lspconfig' " enable LSP
+    Plug 'williamboman/nvim-lsp-installer' " simple to use language server installer
 call plug#end()

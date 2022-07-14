@@ -6,10 +6,10 @@ if !empty($nvimColorTheme)
     source $HOME/.config/nvim/themes/$nvimColorTheme.vim
 endif
 
-source $HOME/.config/nvim/plug-config/coc.vim
+" source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/vim-javascript.vim
-source $HOME/.config/nvim/plug-config/formatters.vim
+" source $HOME/.config/nvim/plug-config/formatters.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/rainbowcols.vim
 
@@ -18,4 +18,4 @@ luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/plug-config/treesitter.lua
 luafile $HOME/.config/nvim/lua/bufferLine.lua
 luafile $HOME/.config/nvim/plug-config/gitSigns.lua
-
+luafile $HOME/.config/nvim/lsp/init.lua
