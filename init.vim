@@ -19,3 +19,4 @@ luafile $HOME/.config/nvim/plug-config/treesitter.lua
 luafile $HOME/.config/nvim/lua/bufferLine.lua
 luafile $HOME/.config/nvim/plug-config/gitSigns.lua
 luafile $HOME/.config/nvim/lsp/init.lua
+luafile $HOME/.config/nvim/lua/cmp.lua

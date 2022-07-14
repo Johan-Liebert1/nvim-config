@@ -62,4 +62,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " LSP
     Plug 'neovim/nvim-lspconfig' " enable LSP
     Plug 'williamboman/nvim-lsp-installer' " simple to use language server installer
+    
+    " cmp plugins
+    Plug   'hrsh7th/nvim-cmp' " The completion plugin
+    Plug   'hrsh7th/cmp-buffer' " buffer completions
+    Plug   'hrsh7th/cmp-path' " path completions
+    Plug   'hrsh7th/cmp-cmdline' " cmdline completions
+    Plug   'saadparwaiz1/cmp_luasnip' " snippet completions
+    Plug   'hrsh7th/cmp-nvim-lsp'
+    Plug   'hrsh7th/cmp-nvim-lua'
 call plug#end()
