@@ -1,0 +1,6 @@
+require "pragyan.plug-configs.bufferLine"
+require "pragyan.plug-configs.gitSigns"
+require "pragyan.plug-configs.plug-colorizer"
+require "pragyan.plug-configs.treesitter"
+require "pragyan.plug-configs.cmp"
+require "pragyan.plug-configs.lualine"
