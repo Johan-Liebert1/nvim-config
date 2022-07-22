@@ -1,7 +1,7 @@
 " Remaps
 vnoremap <silent><c-s> <c-c>:update<cr>gv
 inoremap <silent><c-s> <c-o>:update<cr>
-tnoremap ll <C-\><C-n>
+tnoremap hh <C-\><C-n>
 
 " ctrl + ] to go to the next buffer and ctrl + [ to go the previous buffer
 noremap <C-]> :bn<CR>
