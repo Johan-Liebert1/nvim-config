@@ -60,7 +60,7 @@ return packer.startup(function(use)
 
     -- Tree sitter
     use 'nvim-treesitter/nvim-treesitter'
-    -- use 'p00f/nvim-ts-rainbow' FAILED TO INSTALL
+    use 'p00f/nvim-ts-rainbow' 
     use 'nvim-treesitter/playground'
 
     -- Better syntax support

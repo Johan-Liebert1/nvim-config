@@ -1,11 +1,12 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
+local visual_mode_opts = {}
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
-keymap('n', '<C-p>',":Files<CR>",opts)
-keymap('n', '<M-b>',":NERDTreeToggle<CR>",opts)
+keymap('n', '<C-p>', ":Files<CR>", opts)
+keymap('n', '<M-b>', ":NERDTreeToggle<CR>", opts)
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -59,7 +60,9 @@ keymap("v", "<C-M-j>", ":m .+1<CR>==", opts)
 keymap("v", "<C-M-k>", ":m .-2<CR>==", opts)
 keymap("n", "<C-M-j>", ":m .+1<CR>==", opts)
 keymap("n", "<C-M-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+
+-- SOME WEIRD REGISTRY MANIPULATION FUCKERY
+-- keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
@@ -68,9 +71,13 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- clear 
+-- clear
 keymap("n", "<C-\\>", ":noh <CR>", opts)
 
 -- Terminal --
 -- Better terminal navigation
-keymap("t", "ll", "<C-\\><C-N>", term_opts)
+keymap("t", "hh", "<C-\\><C-N>", term_opts)
+
+
+-- Auto comments with C + /
+-- keymap("v", "<C-/>", ":s;^;// <CR>", visual_mode_opts)
