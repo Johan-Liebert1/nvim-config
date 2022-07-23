@@ -124,16 +124,6 @@ _G.packer_plugins = {
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  fzf = {
-    loaded = true,
-    path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/fzf",
-    url = "https://github.com/junegunn/fzf"
-  },
-  ["fzf.vim"] = {
-    loaded = true,
-    path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/fzf.vim",
-    url = "https://github.com/junegunn/fzf.vim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -222,6 +212,16 @@ _G.packer_plugins = {
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["telescope-media-files.nvim"] = {
+    loaded = true,
+    path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
+    url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
   ultisnips = {
     loaded = true,
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/ultisnips",
@@ -242,11 +242,6 @@ _G.packer_plugins = {
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-javascript"] = {
-    loaded = true,
-    path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/vim-javascript",
-    url = "https://github.com/pangloss/vim-javascript"
-  },
   ["vim-polyglot"] = {
     loaded = true,
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/vim-polyglot",
@@ -256,11 +251,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
-  },
-  ["vim-rooter"] = {
-    loaded = true,
-    path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/vim-rooter",
-    url = "https://github.com/airblade/vim-rooter"
   },
   ["vim-snippets"] = {
     loaded = true,

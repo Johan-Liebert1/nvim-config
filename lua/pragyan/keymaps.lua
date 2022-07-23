@@ -5,8 +5,10 @@ local visual_mode_opts = {}
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
-keymap('n', '<C-p>', ":Files<CR>", opts)
-keymap('n', '<M-b>', ":NERDTreeToggle<CR>", opts)
+keymap("n", "<C-p>", ":Telescope find_files <CR>", opts)
+keymap("n", "<C-f>", ":Telescope live_grep <CR>", opts)
+
+keymap("n", "<M-b>", ":NERDTreeToggle<CR>", opts)
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -77,7 +79,6 @@ keymap("n", "<C-\\>", ":noh <CR>", opts)
 -- Terminal --
 -- Better terminal navigation
 keymap("t", "hh", "<C-\\><C-N>", term_opts)
-
 
 -- Auto comments with C + /
 -- keymap("v", "<C-/>", ":s;^;// <CR>", visual_mode_opts)
