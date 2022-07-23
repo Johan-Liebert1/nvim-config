@@ -6,3 +6,4 @@ end
 
 require("pragyan.lsp.lsp-installer")
 require("pragyan.lsp.handlers").setup()
+require("pragyan.lsp.null-ls")

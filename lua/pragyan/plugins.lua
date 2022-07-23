@@ -45,78 +45,79 @@ return packer.startup(function(use)
 
 
 
-    -- My plugins here
-    use "wbthomason/packer.nvim" -- Have packer manage itself
-    use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-    use "Johan-Liebert1/nvcode-color-schemes.vim" -- my color theme
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  -- My plugins here
+  use "wbthomason/packer.nvim" -- Have packer manage itself
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "Johan-Liebert1/nvcode-color-schemes.vim" -- my color theme
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' }
 
-    -- Git integration
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-rhubarb'
-    use 'junegunn/gv.vim'
-    use 'lewis6991/gitsigns.nvim'
+  -- Git integration
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
+  use 'junegunn/gv.vim'
+  use 'lewis6991/gitsigns.nvim'
 
-    -- Tree sitter
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'p00f/nvim-ts-rainbow' 
-    use 'nvim-treesitter/playground'
+  -- Tree sitter
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'p00f/nvim-ts-rainbow'
+  use 'nvim-treesitter/playground'
 
-    -- Better syntax support
-    use 'sheerun/vim-polyglot'
+  -- Better syntax support
+  use 'sheerun/vim-polyglot'
 
-    -- File explorer
-    use 'scrooloose/NERDTree'
+  -- File explorer
+  use 'scrooloose/NERDTree'
 
-    -- Auto pairs for '(' '[' '{'
-    use 'jiangmiao/auto-pairs'
+  -- Auto pairs for '(' '[' '{'
+  use 'jiangmiao/auto-pairs'
 
-    use 'ryanoasis/vim-devicons'
-    use 'SirVer/ultisnips'
-    use 'honza/vim-snippets'
+  use 'ryanoasis/vim-devicons'
+  use 'SirVer/ultisnips'
+  use 'honza/vim-snippets'
 
 
-    -- status line
+  -- status line
   use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-}
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
-    use 'junegunn/fzf' -- , { 'do': { -> fzf#install() } }
-    use 'junegunn/fzf.vim'
-    use 'airblade/vim-rooter'
-    use 'pangloss/vim-javascript'
+  use 'junegunn/fzf' -- , { 'do': { -> fzf#install() } }
+  use 'junegunn/fzf.vim'
+  use 'airblade/vim-rooter'
+  use 'pangloss/vim-javascript'
 
-    -- For Tab line
-    use 'kyazdani42/nvim-web-devicons' -- Recommended (for coloured icons)
-    use 'akinsho/bufferline.nvim' -- , { 'tag': 'v2.*' }
-    use 'moll/vim-bbye'
+  -- For Tab line
+  use 'kyazdani42/nvim-web-devicons' -- Recommended (for coloured icons)
+  use 'akinsho/bufferline.nvim' -- , { 'tag': 'v2.*' }
+  use 'moll/vim-bbye'
 
-    -- For Multiple Cursors
-    use 'mg979/vim-visual-multi' -- , {'branch': 'master'}
+  -- For Multiple Cursors
+  use 'mg979/vim-visual-multi' -- , {'branch': 'master'}
 
-    -- colorizer
-    use 'norcalli/nvim-colorizer.lua'
+  -- colorizer
+  use 'norcalli/nvim-colorizer.lua'
 
-    -- Black formatter
-    use 'ambv/black'
+  -- Black formatter
+  use 'ambv/black'
 
-    -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "hrsh7th/cmp-nvim-lsp" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/cmp-nvim-lsp" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
-    -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-    -- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
 
 

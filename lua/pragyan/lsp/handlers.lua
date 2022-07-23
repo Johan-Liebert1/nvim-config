@@ -15,7 +15,7 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    virtual_text = false,
+    virtual_text = true,
     -- show signs
     signs = {
       active = signs,
@@ -79,16 +79,16 @@ local function lsp_keymaps(bufnr)
     '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
     opts
   )
-  -- vim.keymap.set('n', '<space>f', vim.lsp.buf.format)
+  vim.keymap.set("n", "<space>f", vim.lsp.buf.format)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+  vim.cmd([[ autocmd BufWritePre * lua vim.lsp.buf.format({ timeout_ms = 2000 }) ]])
 end
 
 M.on_attach = function(client, bufnr)
-  --  if client.name == "tsserver" then
-  --    client.server_capabilities.document_formatting = false
-  --  end
+  if client.name == "tsserver" then
+    client.server_capabilities.document_formatting = false
+  end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
