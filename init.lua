@@ -1,9 +1,9 @@
-require "pragyan.options"
-require "pragyan.keymaps"
-require "pragyan.plugins"
+require("pragyan.options")
+require("pragyan.keymaps")
+require("pragyan.plugins")
 
-require "pragyan.plug-configs"
+require("pragyan.plug-configs")
 
-require "pragyan.lsp"
+require("pragyan.lsp")
 
-vim.cmd "colorscheme materialOcean"
+vim.cmd("colorscheme materialOcean")
