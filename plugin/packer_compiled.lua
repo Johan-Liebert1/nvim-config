@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  NERDTree = {
-    loaded = true,
-    path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/NERDTree",
-    url = "https://github.com/scrooloose/NERDTree"
-  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/auto-pairs",
@@ -176,6 +171,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/pragyan/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,

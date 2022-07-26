@@ -5,10 +5,15 @@ local visual_mode_opts = {}
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
-keymap("n", "<C-p>", ":Telescope find_files <CR>", opts)
+keymap(
+  "n",
+  "<C-p>",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts
+)
 keymap("n", "<C-f>", ":Telescope live_grep <CR>", opts)
 
-keymap("n", "<M-b>", ":NERDTreeToggle<CR>", opts)
+keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
