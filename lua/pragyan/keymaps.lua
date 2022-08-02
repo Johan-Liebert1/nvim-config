@@ -68,7 +68,7 @@ keymap("v", "<C-M-k>", ":m .-2<CR>==", opts)
 keymap("n", "<C-M-j>", ":m .+1<CR>==", opts)
 keymap("n", "<C-M-k>", ":m .-2<CR>==", opts)
 
--- SOME WEIRD REGISTRY MANIPULATION FUCKERY
+-- SOME WEIRD REGISTER MANIPULATION FUCKERY
 -- keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --

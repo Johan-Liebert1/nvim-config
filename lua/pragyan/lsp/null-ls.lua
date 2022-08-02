@@ -15,6 +15,20 @@ null_ls.setup({
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.stylua,
     formatting.gofmt,
-    -- formatting.prettier,
+    formatting.deno_fmt.with({
+      extra_args = {
+        "--options-line-width",
+        "90",
+        "--options-single-quote",
+        "true",
+        "--options-indent-width",
+        "4",
+        "--options-semi-colon",
+        "true",
+      },
+    }),
+    formatting.prettierd.with({
+      disabled_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    }), -- use deno instead,
   },
 })

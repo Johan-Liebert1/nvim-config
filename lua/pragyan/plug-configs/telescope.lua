@@ -13,6 +13,7 @@ telescope.setup({
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "truncate" },
+        file_ignore_patterns = { "node_modules", ".git", "env" },
 
         mappings = {
             i = {
@@ -87,6 +88,9 @@ telescope.setup({
         -- }
         -- Now the picker_config_key will be applied every time you call this
         -- builtin picker
+        find_files = {
+            hidden = true,
+        },
     },
     extensions = {
         -- Your extension configuration goes here:
