@@ -85,5 +85,16 @@ keymap("n", "<C-\\>", ":noh <CR>", opts)
 -- Better terminal navigation
 keymap("t", "hh", "<C-\\><C-N>", term_opts)
 
+-- Visual and Visual Block --
+-- surround with brackets
+-- keymap("x", "(", ":s;\\%V.*\\%V;(&)<CR> | :noh <CR>", opts)
+-- keymap("x", "[", ":s;\\%V.*\\%V;[&]<CR> | :noh <CR>", opts)
+-- keymap("x", "{", ":s;\\%V.*\\%V;{&}<CR> | :noh <CR>", opts)
+keymap("v", "(", ":s;\\%V.*\\%V;(&)<CR> | :noh <CR>", opts)
+keymap("v", "[", ":s;\\%V.*\\%V;[&]<CR> | :noh <CR>", opts)
+keymap("v", "{", ":s;\\%V.*\\%V;{&}<CR> | :noh <CR>", opts)
+keymap("v", "'", ":s;\\%V.*\\%V;'&'<CR> | :noh <CR>", opts)
+keymap("v", '"', ':s;\\%V.*\\%V;"&"<CR> | :noh <CR>', opts)
+
 -- Auto comments with C + /
 -- keymap("v", "<C-/>", ":s;^;// <CR>", visual_mode_opts)
