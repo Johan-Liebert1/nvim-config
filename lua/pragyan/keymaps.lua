@@ -1,9 +1,14 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
-local visual_mode_opts = {}
+-- local visual_mode_opts = {}
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
+
+-- Remap , as leader key
+keymap("", ",", "<Nop>", opts)
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 keymap(
   "n",
@@ -12,13 +17,9 @@ keymap(
   opts
 )
 keymap("n", "<C-f>", ":Telescope live_grep <CR>", opts)
+keymap("n", "<leader>b", ":Telescope buffers <CR>", opts)
 
 keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
-
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -35,12 +36,10 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
-
 -- close buffer with ctrl + x + x
 keymap("n", "<C-x>x", ":bd<CR>", opts)
 
--- Resize with arrows
+-- Resize windows with hjkl
 keymap("n", "<M-j>", ":resize +2<CR>", opts)
 keymap("n", "<M-k>", ":resize -2<CR>", opts)
 keymap("n", "<M-h>", ":vertical resize -2<CR>", opts)
@@ -98,3 +97,21 @@ keymap("v", '"', ':s;\\%V.*\\%V;"&"<CR> | :noh <CR>', opts)
 
 -- Auto comments with C + /
 -- keymap("v", "<C-/>", ":s;^;// <CR>", visual_mode_opts)
+--
+function CommentCode()
+  local filetype = vim.bo.filetype
+  local comment_starter = "/"
+
+  if filetype == "python" or filetype == "sh" then
+    comment_starter = "#"
+  elseif filetype == "lua" or filetype == "sql" then
+    comment_starter = "--"
+  end
+
+  print(comment_starter)
+
+  return comment_starter
+end
+
+keymap("v", "<C-/>", ":s;^;:v:lua.CommentCode() <CR> | :noh <CR>", opts)
+keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
