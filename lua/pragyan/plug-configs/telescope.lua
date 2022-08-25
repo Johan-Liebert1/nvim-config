@@ -12,7 +12,7 @@ telescope.setup({
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "truncate" },
-        file_ignore_patterns = { "node_modules", ".git", "env" },
+        file_ignore_patterns = { "^node_modules/", ".git/", "^env/" },
 
         mappings = {
             i = {

@@ -11,13 +11,15 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 keymap(
-  "n",
-  "<C-p>",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-  opts
+    "n",
+    "<C-p>",
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>"
+    ,
+    opts
 )
 keymap("n", "<C-f>", ":Telescope live_grep <CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers <CR>", opts)
+keymap("n", "<leader>tr", ":Telescope resume <CR>", opts)
 
 keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
 
@@ -92,26 +94,29 @@ keymap("t", "hh", "<C-\\><C-N>", term_opts)
 keymap("v", "(", ":s;\\%V.*\\%V;(&)<CR> | :noh <CR>", opts)
 keymap("v", "[", ":s;\\%V.*\\%V;[&]<CR> | :noh <CR>", opts)
 keymap("v", "{", ":s;\\%V.*\\%V;{&}<CR> | :noh <CR>", opts)
-keymap("v", "'", ":s;\\%V.*\\%V;'&'<CR> | :noh <CR>", opts)
-keymap("v", '"', ':s;\\%V.*\\%V;"&"<CR> | :noh <CR>', opts)
+keymap("v", "`", ":s;\\%V.*\\%V;`&`<CR> | :noh <CR>", opts)
 
 -- Auto comments with C + /
 -- keymap("v", "<C-/>", ":s;^;// <CR>", visual_mode_opts)
 --
 function CommentCode()
-  local filetype = vim.bo.filetype
-  local comment_starter = "/"
+    local filetype = vim.bo.filetype
+    local comment_starter = "/"
 
-  if filetype == "python" or filetype == "sh" then
-    comment_starter = "#"
-  elseif filetype == "lua" or filetype == "sql" then
-    comment_starter = "--"
-  end
+    if filetype == "python" or filetype == "sh" then
+        comment_starter = "#"
+    elseif filetype == "lua" or filetype == "sql" then
+        comment_starter = "--"
+    end
 
-  print(comment_starter)
+    print(comment_starter)
 
-  return comment_starter
+    return comment_starter
 end
 
-keymap("v", "<C-/>", ":s;^;:v:lua.CommentCode() <CR> | :noh <CR>", opts)
-keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
+-- keymap("v", "<C-/>", ":s;^;:v:lua.CommentCode() <CR> | :noh <CR>", opts)
+-- keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
+
+vim.cmd([[command JsFmt !prettier --write % ]])
+
+-- vim.api.nvim_add_user_command("JsFmt", "<cmd> ! prettier --write %", {})
