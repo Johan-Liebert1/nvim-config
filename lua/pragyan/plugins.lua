@@ -50,9 +50,6 @@ return packer.startup(function(use)
     -- use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" })
 
     -- Git integration
-    -- use("tpope/vim-fugitive")
-    -- use("tpope/vim-rhubarb")
-    -- use("junegunn/gv.vim")
     use("lewis6991/gitsigns.nvim")
 
     -- Tree sitter
@@ -68,9 +65,6 @@ return packer.startup(function(use)
         },
         tag = "nightly", -- optional, updated every week. (see issue #1193)
     })
-
-    -- Auto pairs for '(' '[' '{'
-    use("jiangmiao/auto-pairs")
 
     -- use("ryanoasis/vim-devicons")
 
@@ -111,7 +105,7 @@ return packer.startup(function(use)
     -- LSP
     use("neovim/nvim-lspconfig") -- enable LSP
     use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-    use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+    --    use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
     -- Telescope
     use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
