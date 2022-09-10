@@ -57,6 +57,9 @@ return packer.startup(function(use)
     use("p00f/nvim-ts-rainbow")
     use("nvim-treesitter/playground")
 
+    -- Auto pairs for '(' '[' '{'
+    use("jiangmiao/auto-pairs")
+
     -- File explorer
     use({
         "kyazdani42/nvim-tree.lua",
@@ -110,9 +113,6 @@ return packer.startup(function(use)
     -- Telescope
     use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
     use("nvim-telescope/telescope-media-files.nvim")
-
-    -- To Show marks in gutter
-    -- use("jeetsukumaran/vim-markology")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

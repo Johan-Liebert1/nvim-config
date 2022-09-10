@@ -21,6 +21,8 @@ keymap("n", "<C-f>", ":Telescope live_grep <CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers <CR>", opts)
 keymap("n", "<leader>tr", ":Telescope resume <CR>", opts)
 
+keymap("n", "<leader>nf", ":NvimTreeFindFile <CR>", opts)
+
 keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
 
 -- Modes

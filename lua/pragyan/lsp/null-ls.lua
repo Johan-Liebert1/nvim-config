@@ -16,6 +16,7 @@ null_ls.setup({
         formatting.black.with({ extra_args = { "--fast" } }),
         formatting.stylua,
         formatting.gofmt,
+        formatting.rustfmt,
         formatting.deno_fmt.with({
             extra_args = {
                 "--options-line-width",
