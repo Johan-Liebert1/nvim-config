@@ -119,6 +119,7 @@ end
 -- keymap("v", "<C-/>", ":s;^;:v:lua.CommentCode() <CR> | :noh <CR>", opts)
 -- keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
 
-vim.cmd([[command JsFmt !prettier --write % ]])
+vim.cmd([[ command JsFmt !prettier --write % ]])
+vim.cmd([[ command ClsAll :%bd | e# ]])
 
 -- vim.api.nvim_add_user_command("JsFmt", "<cmd> ! prettier --write %", {})

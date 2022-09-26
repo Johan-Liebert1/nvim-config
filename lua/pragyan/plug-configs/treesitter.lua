@@ -2,15 +2,23 @@ local configs = require("nvim-treesitter.configs")
 configs.setup({
     -- ensure_installed = "maintained",
     sync_install = false,
+
     ignore_install = { "" }, -- List of parsers to ignore installing
+
     highlight = {
         enable = true, -- false will disable the whole extension
-        disable = function(lang, bufnr) -- Disable on large buffers
+
+        -- Disable on large buffers
+        disable = function(lang, bufnr)
+            -- or vim.api.nvim_buf_set_extmark > 10000
             return vim.api.nvim_buf_line_count(bufnr) > 10000
-        end, -- list of language that will be disabled
+        end,
+
         additional_vim_regex_highlighting = false,
     },
-    indent = { enable = true, disable = { "yaml" } },
+
+    -- indent = { enable = true, disable = { "yaml" } },
+
     rainbow = {
         enable = true,
         disable = { "html" }, -- list of languages you want to disable the plugin for
