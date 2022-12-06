@@ -122,6 +122,9 @@ return packer.startup(function(use)
     -- surround
     use("tpope/vim-surround")
 
+    -- indentation lines
+    use "lukas-reineke/indent-blankline.nvim"
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
