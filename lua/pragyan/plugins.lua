@@ -57,7 +57,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         -- used tag because of https://github.com/nvim-treesitter/nvim-treesitter/issues/2996
         -- first comment
-        tag = "e4df4228b7c07f98e55345b40ac0093d27d0d18c"
+        -- tag = "e4df4228b7c07f98e55345b40ac0093d27d0d18c"
     })
     use("p00f/nvim-ts-rainbow")
     use("nvim-treesitter/playground")
