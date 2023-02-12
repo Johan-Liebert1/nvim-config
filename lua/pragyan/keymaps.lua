@@ -122,12 +122,12 @@ end
 -- keymap("v", "<C-/>", ":s;^;:v:lua.CommentCode() <CR> | :noh <CR>", opts)
 -- keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
 
-vim.cmd([[ command JsFmt !prettier --write % ]])
+vim.cmd([[ command JsFmt !prettier --write % --tab-width=4 ]])
 vim.cmd([[ command RsFmt !rustfmt % ]])
 vim.cmd([[ command GoFmt !gofmt -w % ]])
 vim.cmd([[ command ClsAll :%bd | e# ]])
 vim.cmd([[ command CppFmt !clang-format % -i -style="{BasedOnStyle: llvm, IndentWidth: 4}" ]])
 
-vim.cmd([[ command ReactStylesFix :s;<\([A-Z]\);<Styles.\1;g | s;</\([A-Z]\);</Styles.\1;g ]])
+vim.cmd([[ command ReactStylesFix :%s;<\([A-Z]\);<Styles.\1;g | %s;</\([A-Z]\);</Styles.\1;g ]])
 
 -- vim.api.nvim_add_user_command("JsFmt", "<cmd> ! prettier --write %", {})
