@@ -125,6 +125,9 @@ return packer.startup(function(use)
     -- indentation lines
     use "lukas-reineke/indent-blankline.nvim"
 
+    -- default theme until treesitter gets its shit together
+    -- use ({ 'projekt0n/github-nvim-theme' })
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

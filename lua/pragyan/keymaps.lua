@@ -25,6 +25,9 @@ keymap("n", "<leader>nf", ":NvimTreeFindFile <CR>", opts)
 
 keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
 
+-- go to previously edited buffer using ,e
+keymap("n", "<leader>e", "<C-^>", opts)
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -123,6 +126,7 @@ vim.cmd([[ command JsFmt !prettier --write % ]])
 vim.cmd([[ command RsFmt !rustfmt % ]])
 vim.cmd([[ command GoFmt !gofmt -w % ]])
 vim.cmd([[ command ClsAll :%bd | e# ]])
+vim.cmd([[ command CppFmt !clang-format % -i -style="{BasedOnStyle: llvm, IndentWidth: 4}" ]])
 
 vim.cmd([[ command ReactStylesFix :s;<\([A-Z]\);<Styles.\1;g | s;</\([A-Z]\);</Styles.\1;g ]])
 
