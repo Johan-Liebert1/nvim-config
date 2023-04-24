@@ -57,8 +57,8 @@ keymap("n", "<C-]>", ":bnext<CR>", opts)
 keymap("n", "<C-[>", ":bprevious<CR>", opts)
 
 -- Move to next/previous git hunk
-keymap("n", "<[-c>", ":Gitsigns prev_hunk<CR>", opts)
-keymap("n", "<]-c>", ":Gitsigns next_hunk<CR>", opts)
+keymap("n", "[c", ":Gitsigns prev_hunk<CR>", opts)
+keymap("n", "]c", ":Gitsigns next_hunk<CR>", opts)
 
 -- Better Saving files
 keymap("n", "<C-s>", ":w <CR>", opts)
