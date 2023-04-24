@@ -56,6 +56,10 @@ keymap("n", "<M-l>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-]>", ":bnext<CR>", opts)
 keymap("n", "<C-[>", ":bprevious<CR>", opts)
 
+-- Move to next/previous git hunk
+keymap("n", "<[-c>", ":Gitsigns prev_hunk<CR>", opts)
+keymap("n", "<]-c>", ":Gitsigns next_hunk<CR>", opts)
+
 -- Better Saving files
 keymap("n", "<C-s>", ":w <CR>", opts)
 
@@ -127,6 +131,8 @@ vim.cmd([[ command RsFmt !rustfmt % ]])
 vim.cmd([[ command GoFmt !gofmt -w % ]])
 vim.cmd([[ command ClsAll :%bd | e# ]])
 vim.cmd([[ command CppFmt !clang-format % -i -style="{BasedOnStyle: llvm, IndentWidth: 4}" ]])
+vim.cmd([[ command SurroundCSVWithQuotes :s;,\([a-zA-Z0-9\.\-/\?:=]*\),;,'\1',;g ]])
+
 
 vim.cmd([[ command ReactStylesFix :%s;<\([A-Z]\);<Styles.\1;g | %s;</\([A-Z]\);</Styles.\1;g ]])
 
