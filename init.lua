@@ -15,6 +15,6 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
     end
 end
 
--- vim.api.nvim_set_hl(0, '@lsp.type.function', {
---     fg = '#6695fa'
--- })
+vim.api.nvim_set_hl(0, '@lsp.type.function', {
+    fg = '#6695fa'
+})
