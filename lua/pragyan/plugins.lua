@@ -59,7 +59,7 @@ return packer.startup(function(use)
         -- first comment
         -- tag = "e4df4228b7c07f98e55345b40ac0093d27d0d18c"
     })
-    use("p00f/nvim-ts-rainbow")
+    -- use("p00f/nvim-ts-rainbow") <-- this shit is deprecated
     use("nvim-treesitter/playground")
 
     -- Auto pairs for '(' '[' '{'
