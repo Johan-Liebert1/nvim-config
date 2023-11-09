@@ -116,7 +116,7 @@ return packer.startup(function(use)
     -- use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
     -- Telescope
-    use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
+    use({ "nvim-telescope/telescope.nvim" })
     use("nvim-telescope/telescope-media-files.nvim")
 
     -- surround
