@@ -21,6 +21,6 @@ vim.api.nvim_set_hl(0, '@lsp.type.function', {
 
 -- lang.lua - Neovim syntax highlighting for .berk files
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-    pattern = "*.berk",
+    pattern = "*.cberk",
     command = "set filetype=lua",
 })
