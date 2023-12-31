@@ -93,7 +93,7 @@ keymap("n", "<C-\\>", ":noh <CR>", opts)
 
 -- Terminal --
 -- Better terminal navigation
-keymap("t", "<C-H><C-H>", "<C-\\><C-N>", term_opts)
+keymap("t", "<C-K><C-K>", "<C-\\><C-N>", term_opts)
 
 -- Visual and Visual Block --
 -- surround with brackets
