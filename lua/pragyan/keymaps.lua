@@ -105,6 +105,9 @@ keymap("v", "[", ":s;\\%V.*\\%V;[&]<CR> | :noh <CR>", opts)
 keymap("v", "{", ":s;\\%V.*\\%V;{&}<CR> | :noh <CR>", opts)
 keymap("v", "`", ":s;\\%V.*\\%V;`&`<CR> | :noh <CR>", opts)
 
+-- gF also follows line numbers
+keymap("n", "gf", "gF", opts)
+
 -- Auto comments with C + /
 -- keymap("v", "<C-/>", ":s;^;// <CR>", visual_mode_opts)
 --
