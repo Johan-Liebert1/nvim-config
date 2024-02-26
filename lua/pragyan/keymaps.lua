@@ -13,8 +13,7 @@ vim.g.maplocalleader = ","
 keymap(
     "n",
     "<C-p>",
-    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>"
-    ,
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
     opts
 )
 keymap("n", "<C-f>", ":Telescope live_grep <CR>", opts)
