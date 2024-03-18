@@ -90,6 +90,30 @@ telescope.setup({
         find_files = {
             hidden = true,
         },
+        live_grep = {
+            additional_args = function(opts)
+                return {
+                    '--hidden',
+                    '--no-ignore',
+                    '--glob',
+                    '!generated',
+                    '--glob',
+                    '!.git',
+                    '--glob',
+                    '!node_modules',
+                    '--glob',
+                    '!.next',
+                    '--glob',
+                    '!dist',
+                    '--glob',
+                    '!build',
+                    '--glob',
+                    '!*.lock',
+                    '--glob',
+                    '!*.log'
+                }
+            end
+        },
     },
     extensions = {
         -- Your extension configuration goes here:

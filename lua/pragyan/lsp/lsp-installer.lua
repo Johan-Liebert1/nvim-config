@@ -21,6 +21,11 @@ lsp_installer.on_server_ready(function(server)
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
 
+	-- if server.name == "gopls" then
+	-- 	local gopls_opts = require("pragyan.lsp.settings.gopls")
+	-- 	opts = vim.tbl_deep_extend("force", gopls_opts, opts)
+	-- end
+
 	--	if server.name == "pyright" then
 	--		local pyright_opts = require("pragyan.lsp.settings.pyright")
 	--		opts = vim.tbl_deep_extend("force", pyright_opts, opts)
