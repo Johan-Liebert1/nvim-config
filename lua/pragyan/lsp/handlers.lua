@@ -77,8 +77,8 @@ local function lsp_keymaps(bufnr)
     -- diagnostic info
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
-    -- formatting files
-    vim.keymap.set("n", "<Leader>f", vim.lsp.buf.format)
+    -- formatting files, this does not work
+    -- vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>")
 
     -- next and previous diagnostic
     vim.api.nvim_buf_set_keymap(bufnr, "n", "[g", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
