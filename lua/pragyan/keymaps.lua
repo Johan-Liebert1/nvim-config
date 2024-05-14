@@ -128,11 +128,11 @@ end
 -- keymap("v", "<C-/>", ":s;^;:v:lua.CommentCode() <CR> | :noh <CR>", opts)
 -- keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
 
-vim.cmd([[ command JsFmt !prettier --write % --tab-width=4 ]])
-vim.cmd([[ command RsFmt !rustfmt % ]])
-vim.cmd([[ command GoFmt !gofmt -w % ]])
+vim.cmd([[ command JsFmt !prettier --write '%' --tab-width=4 ]])
+vim.cmd([[ command RsFmt !rustfmt '%' ]])
+vim.cmd([[ command GoFmt !gofmt -w '%' ]])
 vim.cmd([[ command ClsAll :%bd | e# ]])
-vim.cmd([[ command CppFmt !clang-format % -i -style="{BasedOnStyle: llvm, IndentWidth: 4}" ]])
+vim.cmd([[ command CppFmt !clang-format '%' -i -style="{BasedOnStyle: llvm, IndentWidth: 4}" ]])
 vim.cmd([[ command SurroundCSVWithQuotes :s;,\([a-zA-Z0-9\.\-/\?:=]*\),;,'\1',;g ]])
 
 
