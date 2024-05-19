@@ -25,6 +25,16 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     command = "set filetype=lua",
 })
 
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.vert",
+    command = "set filetype=glsl",
+})
+
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.frag",
+    command = "set filetype=glsl",
+})
+
 PrettyPrint = function (table)
     vim.print(table)
 end
