@@ -3,10 +3,11 @@ require("pragyan.plugins")
 
 require("pragyan.plug-configs")
 
+vim.cmd("colorscheme materialOcean")
+
 require("pragyan.lsp")
 require("pragyan.keymaps")
 
-vim.cmd("colorscheme materialOcean")
 
 -- Hide all semantic highlights
 for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
