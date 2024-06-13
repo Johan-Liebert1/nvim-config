@@ -6,7 +6,7 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Remap , as leader key
-keymap("", ",", "<Nop>", opts)
+keymap("", ",,", ",", opts)
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
