@@ -109,8 +109,8 @@ local lsps = { "tsserver", "eslint", "gopls", "bashls" }
 
 for _, lspName in ipairs(lsps) do
     require('lspconfig')[lspName].setup({
-        on_attach  = on_attach,
-        capabilities = capabilities
+        on_attach  = M.on_attach,
+        capabilities = M.capabilities
     })
 end
 
