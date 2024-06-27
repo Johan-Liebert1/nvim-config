@@ -113,12 +113,13 @@ return packer.startup(function(use)
     use("L3MON4D3/LuaSnip") --snippet engine
     use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
     use("honza/vim-snippets")
-    -- use("SirVer/ultisnips")
+
+    -- mason
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
 
     -- LSP
     use("neovim/nvim-lspconfig") -- enable LSP
-    use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-    -- use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
     -- Telescope
     use({ "nvim-telescope/telescope.nvim" })
@@ -129,9 +130,6 @@ return packer.startup(function(use)
 
     -- indentation lines
     use "lukas-reineke/indent-blankline.nvim"
-
-    -- default theme until treesitter gets its shit together
-    -- use ({ 'projekt0n/github-nvim-theme' })
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

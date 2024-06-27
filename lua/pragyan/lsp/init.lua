@@ -4,6 +4,5 @@ if not status_ok then
     return
 end
 
-require("pragyan.lsp.lsp-installer")
+require("pragyan.lsp.mason")
 require("pragyan.lsp.handlers").setup()
--- require("pragyan.lsp.null-ls")
