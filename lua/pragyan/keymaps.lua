@@ -130,7 +130,7 @@ end
 
 vim.cmd([[ command JsFmt !prettier --write '%' --tab-width=4 ]])
 vim.cmd([[ command RsFmt !rustfmt '%' ]])
-vim.cmd([[ command GoFmt !gofmt -w '%' ]])
+vim.cmd([[ command GoFmt !golines -w '%' ]])
 vim.cmd([[ command ClsAll :%bd | e# ]])
 vim.cmd([[ command CppFmt !clang-format '%' -i -style="{BasedOnStyle: llvm, IndentWidth: 4}" ]])
 vim.cmd([[ command SurroundCSVWithQuotes :s;,\([a-zA-Z0-9\.\-/\?:=]*\),;,'\1',;g ]])
