@@ -105,7 +105,7 @@ end
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- need to do this for some reason
-local lsps = { "tsserver", "eslint", "gopls", "bashls" }
+local lsps = { "tsserver", "eslint", "gopls", "bashls", "clangd", "yamlls" }
 
 for _, lspName in ipairs(lsps) do
     require('lspconfig')[lspName].setup({
