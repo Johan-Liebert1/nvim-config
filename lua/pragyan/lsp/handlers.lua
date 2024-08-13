@@ -105,13 +105,23 @@ end
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- need to do this for some reason
-local lsps = { "tsserver", "eslint", "gopls", "bashls", "clangd", "yamlls", "html", "rust_analyzer" }
+local lsps = { "tsserver", "eslint", "gopls", "bashls", "clangd", "yamlls", "html", "rust_analyzer", "pyright" }
 
 for _, lspName in ipairs(lsps) do
-    require('lspconfig')[lspName].setup({
+    local config = {
         on_attach  = M.on_attach,
         capabilities = M.capabilities
-    })
+    }
+
+    -- if lspName == "gopls" then
+    --     config.settings = {
+    --         gopls = {
+    --             buildFlags = { "-tags=rdp" }
+    --         }
+    --     }
+    -- end
+
+    require('lspconfig')[lspName].setup(config)
 end
 
 return M
