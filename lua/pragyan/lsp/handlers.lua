@@ -105,7 +105,7 @@ end
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- need to do this for some reason
-local lsps = { "tsserver", "eslint", "gopls", "bashls", "clangd", "yamlls", "html", "rust_analyzer", "pyright", "cmake", "vuels" }
+local lsps = { "ts_ls", "eslint", "gopls", "bashls", "clangd", "yamlls", "html", "rust_analyzer", "pyright", "cmake", "vuels" }
 
 for _, lspName in ipairs(lsps) do
     local config = {
