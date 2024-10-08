@@ -131,6 +131,14 @@ return packer.startup(function(use)
     -- indentation lines
     use "lukas-reineke/indent-blankline.nvim"
 
+    -- markdown preview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use("stevearc/oil.nvim")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

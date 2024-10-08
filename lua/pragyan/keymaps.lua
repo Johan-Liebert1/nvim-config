@@ -22,7 +22,7 @@ keymap("n", "<leader>tr", ":Telescope resume <CR>", opts)
 
 keymap("n", "<leader>nf", ":NvimTreeFindFile <CR>", opts)
 
-keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<M-b>", ":Oil<CR>", opts)
 
 -- go to previously edited buffer using ,e
 keymap("n", "<leader>e", "<C-^>", opts)
