@@ -16,6 +16,13 @@ for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
     end
 end
 
+--- @param str string
+--- @param substring string
+--- @return boolean
+local function starts_with(str, substring)
+    return string.sub(str, 1, #substring) == substring
+end
+
 vim.api.nvim_set_hl(0, '@lsp.type.function', {
     fg = '#6695fa'
 })
@@ -36,15 +43,20 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     command = "set filetype=glsl",
 })
 
--- vim.api.nvim_create_autocmd({"BufEnter"}, {
---     pattern = "*",
---     callback = function()
---         local dir = vim.fn.expand("%:p:h")
---         if vim.fn.isdirectory(dir) == 1 then
---             vim.cmd("tcd " .. dir)
---         end
---     end,
--- })
+vim.api.nvim_create_autocmd({"BufEnter"}, {
+    pattern = "*",
+    callback = function()
+        local current_buf = vim.fn.expand("%")
+
+        if vim.fn.isdirectory(current_buf) then
+            if starts_with(current_buf, "oil://") then
+                current_buf = current_buf.sub(current_buf, 7)
+            end
+
+            vim.cmd.cd(current_buf)
+        end
+    end,
+})
 
 PrettyPrint = function (table)
     vim.print(table)
