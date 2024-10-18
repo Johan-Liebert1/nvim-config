@@ -105,7 +105,7 @@ end
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- need to do this for some reason
-local lsps = { "ts_ls", "eslint", "gopls", "bashls", "clangd", "yamlls", "html", "rust_analyzer", "pyright", "cmake", "vuels" }
+local lsps = { "ts_ls", "eslint", "gopls", "bashls", "clangd", "yamlls", "html", "rust_analyzer", "pyright", "cmake", "vuels", "lua_ls" }
 
 for _, lspName in ipairs(lsps) do
     local config = {
@@ -120,6 +120,23 @@ for _, lspName in ipairs(lsps) do
                     GOOS = "linux"
                 },
                 buildFlags = { "-tags=rdp" }
+            }
+        }
+    end
+
+    if lspName == "lua_ls" then
+        config.settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { 'vim' }
+                },
+                workspace = {
+                    library = vim.api.nvim_get_runtime_file("", true), -- Make Neovim runtime files available to lua_ls
+                    checkThirdParty = false -- Optional: Disable third-party checks
+                },
+                telemetry = {
+                    enable = false
+                }
             }
         }
     end
