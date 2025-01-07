@@ -27,9 +27,9 @@ vim.api.nvim_set_hl(0, '@lsp.type.function', {
     fg = '#6695fa'
 })
 
--- lang.lua - Neovim syntax highlighting for .cberk files
+-- lang.lua - Neovim syntax highlighting for .cy files
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-    pattern = "*.cberk",
+    pattern = "*.cy",
     command = "set filetype=lua",
 })
 
