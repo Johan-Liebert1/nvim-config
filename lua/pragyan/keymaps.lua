@@ -132,6 +132,7 @@ end
 -- keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
 
 vim.cmd([[ command JsFmt !prettier --write '%' --tab-width=4 ]])
+vim.cmd([[ command PyFmt !yapf -i '%' ]])
 vim.cmd([[ command RsFmt !rustfmt '%' ]])
 vim.cmd([[ command GoFmt !golines -w '%' ]])
 vim.cmd([[ command ClsAll :%bd | e# ]])
