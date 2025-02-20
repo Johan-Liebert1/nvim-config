@@ -47,7 +47,7 @@ nvim_tree.setup({
     -- end,
 
     -- Changes the tree root directory on `DirChanged` and refreshes the tree.
-    sync_root_with_cwd = true,
+    -- sync_root_with_cwd = true,
 
     -- view = {
     --     adaptive_size = false,

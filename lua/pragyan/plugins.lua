@@ -139,8 +139,12 @@ return packer.startup(function(use)
 
     use("stevearc/oil.nvim")
 
+    -- nvim tree
+    use 'nvim-tree/nvim-tree.lua'
+
     -- to automatically add Neovim runtime and type annotations for lua_ls
     use 'folke/neodev.nvim'
+
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
