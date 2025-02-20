@@ -27,6 +27,19 @@ vim.api.nvim_set_hl(0, '@lsp.type.function', {
     fg = '#6695fa'
 })
 
+-- ignition files
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.ign",
+    command = "set filetype=json",
+})
+
+
+-- butane files
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.bu",
+    command = "set filetype=yaml",
+})
+
 -- lang.lua - Neovim syntax highlighting for .cy files
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     pattern = "*.cy",
