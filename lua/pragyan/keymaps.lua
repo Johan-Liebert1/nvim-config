@@ -26,8 +26,8 @@ keymap("n", "<leader>te", ":terminal <CR>", opts)
 keymap("n", "<leader>of", ":Oil <CR>", opts)
 keymap("n", "<leader>nf", ":NvimTreeFindFile <CR>", opts)
 
-keymap("n", "<M-b>", ":Oil <CR>", opts)
-keymap("n", "<M-n>", ":NvimTreeFindFile <CR>", opts)
+keymap("n", "<M-b>", ":NvimTreeFindFileToggle <CR>", opts)
+keymap("n", "<M-o>", ":Oil <CR>", opts)
 
 -- go to previously edited buffer using ,e
 keymap("n", "<leader>e", "<C-^>", opts)
