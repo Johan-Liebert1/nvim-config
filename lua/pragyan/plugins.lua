@@ -88,7 +88,7 @@ return packer.startup(function(use)
     use({
         "akinsho/bufferline.nvim",
         -- https://github.com/akinsho/bufferline.nvim/issues/908
-        tag = "73540cb95f8d95aa1af3ed57713c6720c78af915"
+        -- tag = "73540cb95f8d95aa1af3ed57713c6720c78af915"
     })
     use("moll/vim-bbye") -- so that we don't quit vim when closing buffers
 
