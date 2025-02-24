@@ -140,8 +140,8 @@ vim.cmd([[ command GoFmt !golines -w '%' ]])
 -- store the current buffer number
 -- close all other buffers
 -- open the most recently used buffer
-vim.cmd([[ command ClsAll :let b = bufnr('%') | execute 'silent! %bd!' | if bufexists(b) | execute 'buffer ' . b | endif ]])
--- vim.cmd([[ command ClsAll :%bd | e# ]])
+-- vim.cmd([[ command ClsAll :let b = bufnr('%') | execute 'silent! %bd!' | if bufexists(b) | execute 'buffer ' . b | endif ]])
+vim.cmd([[ command ClsAll :%bd | e# ]])
 vim.cmd([[ command CppFmt !clang-format '%' -i -style="{BasedOnStyle: llvm, IndentWidth: 4, IndentCaseLabels: true, ColumnLimit: 150}" ]])
 vim.cmd([[ command SurroundCSVWithQuotes :s;,\([a-zA-Z0-9\.\-/\?:=]*\),;,'\1',;g ]])
 
