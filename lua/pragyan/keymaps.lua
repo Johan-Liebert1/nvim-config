@@ -146,6 +146,6 @@ vim.cmd([[ command CppFmt !clang-format '%' -i -style="{BasedOnStyle: llvm, Inde
 vim.cmd([[ command SurroundCSVWithQuotes :s;,\([a-zA-Z0-9\.\-/\?:=]*\),;,'\1',;g ]])
 
 
-vim.cmd([[ command ReactStylesFix :%s;<\([A-Z]\);<Styles.\1;g | %s;</\([A-Z]\);</Styles.\1;g ]])
+-- vim.cmd([[ command ReactStylesFix :%s;<\([A-Z]\);<Styles.\1;g | %s;</\([A-Z]\);</Styles.\1;g ]])
 
 -- vim.api.nvim_add_user_command("JsFmt", "<cmd> ! prettier --write %", {})
