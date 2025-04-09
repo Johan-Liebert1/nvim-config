@@ -68,7 +68,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
             arg = arg.sub(arg, #prefix + 1)
         end
 
-        if vim.fn.isdirectory(arg) then
+        -- 0 evaluates as true because lua is stupid
+        if vim.fn.isdirectory(arg) == 1 then
             -- .. is lua's concat operator, why ..? because why not?
             vim.cmd("cd" .. arg)
         end
