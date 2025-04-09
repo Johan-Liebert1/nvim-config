@@ -56,20 +56,24 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     command = "set filetype=glsl",
 })
 
--- vim.api.nvim_create_autocmd({"BufEnter"}, {
---     pattern = "*",
---     callback = function()
---         local current_buf = vim.fn.expand("%")
--- 
---         if vim.fn.isdirectory(current_buf) then
---             if starts_with(current_buf, "oil://") then
---                 current_buf = current_buf.sub(current_buf, 7)
---             end
--- 
---             vim.cmd.cd(current_buf)
---         end
---     end,
--- })
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        local arg = vim.fn.argv()[1]
+
+        -- as the first buffer is oil's
+        local prefix = "oil://"
+
+        -- #string returns the length of the string. why #? because why not?
+        if arg.sub(arg, 1, #prefix) == prefix then
+            arg = arg.sub(arg, #prefix + 1)
+        end
+
+        if vim.fn.isdirectory(arg) then
+            -- .. is lua's concat operator, why ..? because why not?
+            vim.cmd("cd" .. arg)
+        end
+    end,
+})
 
 PrettyPrint = function (table)
     vim.print(table)
