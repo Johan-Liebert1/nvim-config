@@ -58,6 +58,10 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
 
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
+        if #vim.fn.argv() == 0 then
+            return
+        end
+
         local arg = vim.fn.argv()[1]
 
         -- as the first buffer is oil's
