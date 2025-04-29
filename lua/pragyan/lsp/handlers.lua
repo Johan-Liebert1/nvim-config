@@ -9,6 +9,20 @@ M.setup = function()
         { name = "DiagnosticSignError", text = "" },
     }
 
+    vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
+    vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
+
+    local border = {
+      {"🭽", "FloatBorder"},
+      {"▔", "FloatBorder"},
+      {"🭾", "FloatBorder"},
+      {"▕", "FloatBorder"},
+      {"🭿", "FloatBorder"},
+      {"▁", "FloatBorder"},
+      {"🭼", "FloatBorder"},
+      {"▏", "FloatBorder"},
+}
+
     for _, sign in ipairs(signs) do
         vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
     end
@@ -25,8 +39,8 @@ M.setup = function()
         -- severity_sort = true,
         float = {
             focusable = true,
-            style = "minimal",
-            border = "rounded",
+            style = "default",
+            border = border,
             source = "always",
             header = "",
             prefix = "",
@@ -35,12 +49,21 @@ M.setup = function()
 
     vim.diagnostic.config(config)
 
+    -- Override open_floating_preview globally
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or border
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
+
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "rounded",
+        border = border,
     })
 
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = "rounded",
+        border = border,
     })
 end
 
