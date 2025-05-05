@@ -47,7 +47,6 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 
     use("Johan-Liebert1/nvcode-color-schemes.vim") -- my color theme
-    -- use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" })
 
     -- Git integration
     use("lewis6991/gitsigns.nvim")
@@ -132,10 +131,10 @@ return packer.startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
 
     -- markdown preview
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
+    -- use({
+    --     "iamcco/markdown-preview.nvim",
+    --     run = function() vim.fn["mkdp#util#install"]() end,
+    -- })
 
     use("stevearc/oil.nvim")
 
