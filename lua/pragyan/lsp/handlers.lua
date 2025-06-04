@@ -65,6 +65,9 @@ M.setup = function()
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = border,
     })
+
+    -- prevent inactive code from showing up in the "comment" color
+    vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { link = "" })
 end
 
 local function lsp_highlight_document(client)
@@ -146,6 +149,19 @@ for _, lspName in ipairs(lsps) do
             }
         }
     end
+
+    -- if lspName == "rust_analyzer" then
+    --     config.settings =  {
+    --         ["rust_analyzer"] = {
+    --             diagnostics = {
+    --                 disabled = { "inactive-code" }, -- disables marking inactive code
+    --             },
+    --             cargo = {
+    --                 allFeatures = true, -- enables code behind feature flags
+    --             },
+    --         },
+    --     }
+    -- end
 
     if lspName == "lua_ls" then
         config.settings = {

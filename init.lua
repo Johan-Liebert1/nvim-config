@@ -40,6 +40,12 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     command = "set filetype=yaml",
 })
 
+-- systemd service files
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.service",
+    command = "set filetype=systemd",
+})
+
 -- lang.lua - Neovim syntax highlighting for .cy files
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     pattern = "*.cy",
