@@ -68,10 +68,14 @@ keymap("n", "]c", ":Gitsigns next_hunk<CR>", opts)
 keymap("n", "<C-s>", ":w <CR>", opts)
 
 -- Insert --
--- Press jk fast to enter
+-- Press jj fast to enter
 keymap("i", "jj", "<ESC>", opts)
 
 -- Visual --
+
+-- json indent
+keymap("v", "<leader>jq", ":!jq --indent 4<CR>", opts)
+
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -145,7 +149,3 @@ vim.cmd([[ command ClsAll :%bd | e# ]])
 vim.cmd([[ command CppFmt !clang-format '%' -i -style="{BasedOnStyle: llvm, IndentWidth: 4, IndentCaseLabels: true, ColumnLimit: 150}" ]])
 vim.cmd([[ command SurroundCSVWithQuotes :s;,\([a-zA-Z0-9\.\-/\?:=]*\),;,'\1',;g ]])
 
-
--- vim.cmd([[ command ReactStylesFix :%s;<\([A-Z]\);<Styles.\1;g | %s;</\([A-Z]\);</Styles.\1;g ]])
-
--- vim.api.nvim_add_user_command("JsFmt", "<cmd> ! prettier --write %", {})
