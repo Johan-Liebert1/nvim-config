@@ -95,22 +95,15 @@ telescope.setup({
                 return {
                     '--hidden',
                     '--no-ignore',
-                    '--glob',
-                    '!generated',
-                    '--glob',
-                    '!.git',
-                    '--glob',
-                    '!node_modules',
-                    '--glob',
-                    '!.next',
-                    '--glob',
-                    '!dist',
-                    '--glob',
-                    '!build',
-                    '--glob',
-                    '!*.lock',
-                    '--glob',
-                    '!*.log'
+                    '--glob', '!generated',
+                    '--glob', '!.git',
+                    '--glob', '!node_modules',
+                    '--glob', '!.next',
+                    '--glob', '!dist',
+                    '--glob', '!build',
+                    '--glob', '!*.lock',
+                    '--glob', '!*.log',
+                    '--glob', '!tmp'
                 }
             end
         },
