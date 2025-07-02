@@ -47,8 +47,8 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- close buffer with ctrl + x + x
-keymap("n", "<C-x>x", ":bd<CR>", opts)
+-- close buffer with ,x
+keymap("n", "<leader>x", ":bd<CR>", opts)
 
 -- Resize windows with hjkl
 keymap("n", "<M-j>", ":resize +2<CR>", opts)
