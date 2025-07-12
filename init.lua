@@ -86,6 +86,28 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.loop.spawn(vim.fn.expand("~/.config/nvim/script.sh"),
+            {
+                stdio = {nil, nil, nil}
+            },
+
+            function(code, _)
+                vim.schedule(
+                    function()
+                        if code == 60 then
+                            vim.api.nvim_echo({{"Nvim config is outdated. Fetch new config", "WarningMsg"}}, false, {})
+                        elseif code ~= 0 then
+                            vim.api.nvim_echo({{"Could not fetch git config", "ErrorMsg"}}, false, {})
+                        end
+                    end
+                )
+            end
+        )
+    end
+})
+
 PrettyPrint = function (table)
     vim.print(table)
 end
