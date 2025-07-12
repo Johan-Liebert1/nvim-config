@@ -137,7 +137,7 @@ end
 -- keymap("v", "<C-/>", ":s;^;:v:lua.CommentCode() <CR> | :noh <CR>", opts)
 -- keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
 
-vim.cmd([[ command JsFmt !prettier --write '%' --tab-width=4 ]])
+vim.cmd([[ command JsFmt !prettier --write '%' --tab-width=4 --print-width 120 ]])
 vim.cmd([[ command PyFmt !yapf -i '%' ]])
 vim.cmd([[ command RsFmt !rustfmt '%' --edition 2021 ]])
 vim.cmd([[ command GoFmt !golines -w '%' ]])
