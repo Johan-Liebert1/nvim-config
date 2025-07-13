@@ -19,6 +19,7 @@ keymap(
 keymap("n", "<C-f>", ":Telescope live_grep <CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers <CR>", opts)
 keymap("n", "<leader>tr", ":Telescope resume <CR>", opts)
+keymap("n", "<leader>m", ":Telescope marks <CR>", opts)
 
 -- open terminal
 keymap("n", "<leader>te", ":terminal <CR>", opts)
