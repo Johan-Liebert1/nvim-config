@@ -40,6 +40,12 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     command = "set filetype=yaml",
 })
 
+-- tmt fmf files
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.fmf",
+    command = "set filetype=yaml",
+})
+
 -- systemd service files
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     pattern = "*.service",
