@@ -48,6 +48,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- For quickfix (for the telescope window thingy that opens when searching for references with gr)
+-- OR on any telescope window, press Ctrl + q to open a quickfix window
+keymap("n", "<leader>cn", ":cnext<CR>", opts)
+keymap("n", "<leader>cp", ":cprev<CR>", opts)
+
 -- close buffer with ,x
 keymap("n", "<leader>x", ":bd<CR>", opts)
 
