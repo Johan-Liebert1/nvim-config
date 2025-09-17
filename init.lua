@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
 
 -- systemd service files
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-    pattern = "*.service",
+    pattern = { "*.service", "*.target" },
     command = "set filetype=systemd",
 })
 
