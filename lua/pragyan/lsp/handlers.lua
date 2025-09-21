@@ -180,7 +180,8 @@ for _, lspName in ipairs(lsps) do
         }
     end
 
-    require('lspconfig')[lspName].setup(config)
+    vim.lsp.config(lspName, config)
+    -- require('lspconfig')[lspName].setup(config)
 end
 
 return M
