@@ -181,6 +181,8 @@ for _, lspName in ipairs(lsps) do
     end
 
     vim.lsp.config(lspName, config)
+    vim.lsp.enable(lspName)
+
     -- require('lspconfig')[lspName].setup(config)
 end
 
