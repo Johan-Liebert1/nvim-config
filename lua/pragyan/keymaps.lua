@@ -145,7 +145,7 @@ end
 
 vim.cmd([[ command JsFmt !prettier --write '%' --tab-width=4 --print-width 120 ]])
 vim.cmd([[ command PyFmt !yapf -i '%' ]])
-vim.cmd([[ command RsFmt !rustfmt '%' --edition 2021 ]])
+vim.cmd([[ command RsFmt !rustfmt '%' --edition 2024 ]])
 vim.cmd([[ command GoFmt !golines -w '%' ]])
 -- store the current buffer number
 -- close all other buffers
