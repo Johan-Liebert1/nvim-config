@@ -15,5 +15,6 @@ mason_lsp.setup({
             package_pending = "➜",
             package_uninstalled = "✗"
         }
-    }
+    },
+    automatic_enable = true
 })
