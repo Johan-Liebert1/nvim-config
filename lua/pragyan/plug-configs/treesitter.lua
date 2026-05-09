@@ -1,7 +1,5 @@
 local configs = require("nvim-treesitter")
 
-print(configs.setup)
-
 configs.setup({
     -- ensure_installed = "maintained",
     sync_install = false,

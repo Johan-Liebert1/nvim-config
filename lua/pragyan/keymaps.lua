@@ -122,27 +122,6 @@ keymap("v", "`", ":s;\\%V.*\\%V;`&`<CR> | :noh <CR>", opts)
 -- gF also follows line numbers
 keymap("n", "gf", "gF", opts)
 
--- Auto comments with C + /
--- keymap("v", "<C-/>", ":s;^;// <CR>", visual_mode_opts)
---
-function CommentCode()
-    local filetype = vim.bo.filetype
-    local comment_starter = "/"
-
-    if filetype == "python" or filetype == "sh" then
-        comment_starter = "#"
-    elseif filetype == "lua" or filetype == "sql" then
-        comment_starter = "--"
-    end
-
-    print(comment_starter)
-
-    return comment_starter
-end
-
--- keymap("v", "<C-/>", ":s;^;:v:lua.CommentCode() <CR> | :noh <CR>", opts)
--- keymap("n", "<C-b>", ":s;^;v:lua.CommentCode() <CR> | :noh <CR>", { noremap = true, silent = false })
-
 vim.cmd([[ command JsFmt !prettier --write '%' --tab-width=4 --print-width 120 ]])
 vim.cmd([[ command PyFmt !yapf -i '%' ]])
 vim.cmd([[ command RsFmt !rustfmt '%' --edition 2024 ]])
