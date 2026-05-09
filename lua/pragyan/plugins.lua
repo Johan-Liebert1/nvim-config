@@ -1,166 +1,147 @@
-local fn = vim.fn
+-- ~/.config/nvim/lua/pragyan/plugins.lua
 
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system({
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
         "git",
         "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
     })
-    print("Installing packer close and reopen Neovim...")
-    vim.cmd([[packadd packer.nvim]])
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+vim.opt.rtp:prepend(lazypath)
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-    return
-end
+require("lazy").setup({
+    -- Lazy manages itself
+    { "folke/lazy.nvim" },
 
--- Have packer use a popup window
-packer.init({
-    display = {
-        open_fn = function()
-            return require("packer.util").float({ border = "rounded" })
-        end,
-    },
-})
+    -- Utils
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-lua/popup.nvim" },
 
--- Install your plugins here
-return packer.startup(function(use)
-    -- My plugins here
-    use("wbthomason/packer.nvim") -- Have packer manage itself
+    -- Theme
+    { "Johan-Liebert1/nvcode-color-schemes.vim" },
 
-    use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-    use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+    -- Git
+    { "lewis6991/gitsigns.nvim" },
 
-    use("Johan-Liebert1/nvcode-color-schemes.vim") -- my color theme
-
-    -- Git integration
-    use("lewis6991/gitsigns.nvim")
-
-    -- Tree sitter
-    use({
+    -- Treesitter
+    {
         "nvim-treesitter/nvim-treesitter",
-        -- used tag because of https://github.com/nvim-treesitter/nvim-treesitter/issues/2996
-        -- first comment
-        -- tag = "e4df4228b7c07f98e55345b40ac0093d27d0d18c"
-    })
-    -- use("p00f/nvim-ts-rainbow") <-- this shit is deprecated
-    use("nvim-treesitter/playground")
+        lazy = false,
+        build = ":TSUpdate",
+    },
 
-    -- Auto pairs for '(' '[' '{'
-    use("jiangmiao/auto-pairs")
+    -- Auto pairs
+    { "jiangmiao/auto-pairs" },
+
+    -- Icons
+    { "nvim-tree/nvim-web-devicons" },
 
     -- File explorer
-    use({
-        "kyazdani42/nvim-tree.lua",
-        requires = {
-            "kyazdani42/nvim-web-devicons", -- optional, for file icons
-        }
-        -- tag = "nightly", -- optional, updated every week. (see issue #1193)
-    })
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    },
 
-    -- use("ryanoasis/vim-devicons")
-
-    -- status line
-    use({
+    -- Status line
+    {
         "nvim-lualine/lualine.nvim",
-        requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    })
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    },
 
-    -- For Tab line
-    use("kyazdani42/nvim-web-devicons") -- Recommended (for coloured icons)
-
-    use({
+    -- Bufferline
+    {
         "akinsho/bufferline.nvim",
-        -- https://github.com/akinsho/bufferline.nvim/issues/908
-        -- tag = "73540cb95f8d95aa1af3ed57713c6720c78af915"
-    })
-    use("moll/vim-bbye") -- so that we don't quit vim when closing buffers
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    },
 
-    -- For Multiple Cursors
-    use("mg979/vim-visual-multi") -- , {'branch': 'master'}
+    -- Buffer delete
+    { "moll/vim-bbye" },
 
-    -- colorizer
-    use("norcalli/nvim-colorizer.lua")
+    -- Multiple cursors
+    { "mg979/vim-visual-multi" },
+
+    -- Colorizer
+    { "norcalli/nvim-colorizer.lua" },
 
     -- Black formatter
-    use("ambv/black")
+    { "ambv/black" },
 
-    -- cmp plugins
-    use("hrsh7th/nvim-cmp") -- The completion plugin
-    use("hrsh7th/cmp-buffer") -- buffer completions
-    use("hrsh7th/cmp-path") -- path completions
-    use("hrsh7th/cmp-cmdline") -- cmdline completions
-    use("hrsh7th/cmp-nvim-lsp") -- cmdline completions
-    use("saadparwaiz1/cmp_luasnip") -- snippet completions
+    -- CMP
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-cmdline" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "saadparwaiz1/cmp_luasnip" },
 
-    -- snippets
-    use("L3MON4D3/LuaSnip") --snippet engine
-    use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
-    use("honza/vim-snippets")
+    -- Snippets
+    { "L3MON4D3/LuaSnip" },
+    { "rafamadriz/friendly-snippets" },
+    { "honza/vim-snippets" },
 
-    -- mason
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
+    -- Mason
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
 
     -- LSP
-    use("neovim/nvim-lspconfig") -- enable LSP
+    { "neovim/nvim-lspconfig" },
 
     -- Telescope
-    use({ "nvim-telescope/telescope.nvim" })
-    use("nvim-telescope/telescope-media-files.nvim")
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
 
-    -- surround
-    use("tpope/vim-surround")
+    { "nvim-telescope/telescope-media-files.nvim" },
 
-    -- indentation lines
-    use "lukas-reineke/indent-blankline.nvim"
+    -- Surround
+    { "tpope/vim-surround" },
 
-    -- markdown preview
-    -- use({
-    --     "iamcco/markdown-preview.nvim",
-    --     run = function() vim.fn["mkdp#util#install"]() end,
-    -- })
+    -- Indent guides
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+    },
 
-    use("stevearc/oil.nvim")
+    -- Oil
+    { "stevearc/oil.nvim" },
 
-    -- nvim tree
-    use 'nvim-tree/nvim-tree.lua'
+    -- Lua dev
+    { "folke/neodev.nvim" },
 
-    -- to automatically add Neovim runtime and type annotations for lua_ls
-    use 'folke/neodev.nvim'
+    -- Markdown rendering
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons",
+        },
 
-    use({
-        'MeanderingProgrammer/render-markdown.nvim',
-        after = { 'nvim-treesitter' },
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
-        config = function ()
-            require('render-markdown').setup({
+        config = function()
+            require("render-markdown").setup({
                 enabled = false,
-                options = {
-                    render_modes = { 'n', 'c', 't' }
-                }
-            })
-        end
-    })
 
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
-end)
+                render_modes = { "n", "c", "t" },
+            })
+        end,
+    },
+
+}, {
+    ui = {
+        border = "rounded",
+    },
+})

@@ -1,13 +1,14 @@
-vim.cmd("colorscheme materialOcean")
-
 require("pragyan.options")
+
 require("pragyan.plugins")
 
+-- Make sure this loads after lazy
 require("pragyan.plug-configs")
 
 require("pragyan.lsp")
 require("pragyan.keymaps")
 
+vim.cmd.colorscheme("materialOcean")
 
 -- Hide all semantic highlights
 for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
