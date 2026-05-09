@@ -1,4 +1,7 @@
-local configs = require("nvim-treesitter.configs")
+local configs = require("nvim-treesitter")
+
+print(configs.setup)
+
 configs.setup({
     -- ensure_installed = "maintained",
     sync_install = false,
@@ -26,4 +29,9 @@ configs.setup({
         max_file_lines = 2000, -- Do not enable for files with more than n lines, int
         -- termcolors = {} -- table of colour name strings
     },
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { "go", "lua", "c", "c++", "rust", "html", "javascript", "jsx", "tsx", "css" },
+  callback = function() vim.treesitter.start() end,
 })

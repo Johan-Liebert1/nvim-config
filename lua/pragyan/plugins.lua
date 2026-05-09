@@ -1,5 +1,3 @@
--- ~/.config/nvim/lua/pragyan/plugins.lua
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -35,6 +33,11 @@ require("lazy").setup({
         lazy = false,
         build = ":TSUpdate",
     },
+
+    -- {
+    --     "nvim-treesitter/playground",
+    --     lazy = false,
+    -- },
 
     -- Auto pairs
     { "jiangmiao/auto-pairs" },

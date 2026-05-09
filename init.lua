@@ -1,3 +1,9 @@
+-- NOTE: For treesitter to work >=0.12, look into treesitter.lua
+-- at the end add the filetype in there or somethig
+
+
+-- require("vim._core.ui2").enable({})
+
 require("pragyan.options")
 
 require("pragyan.plugins")

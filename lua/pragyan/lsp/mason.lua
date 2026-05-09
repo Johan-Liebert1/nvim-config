@@ -1,4 +1,5 @@
 local status_ok, mason_lsp = pcall(require, "mason")
+mason_lsp.setup()
 
 require("mason-lspconfig").setup()
 

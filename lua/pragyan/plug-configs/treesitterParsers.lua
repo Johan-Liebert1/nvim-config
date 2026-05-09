@@ -1,4 +1,4 @@
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+local parser_config = require "nvim-treesitter.parsers"
 
 parser_config.zimbu = {
   install_info = {

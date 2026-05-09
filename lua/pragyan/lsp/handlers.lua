@@ -58,13 +58,27 @@ M.setup = function()
       return orig_util_open_floating_preview(contents, syntax, opts, ...)
     end
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = border,
-    })
+    -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    --     border = border,
+    -- })
+    --
+    -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    --     border = border,
+    -- })
 
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = border,
-    })
+    local hover = vim.lsp.buf.hover
+        vim.lsp.buf.hover = function()
+            return hover({
+                border = border,
+            })
+    end
+
+    local signature_help = vim.lsp.buf.signature_help
+        vim.lsp.buf.signature_help = function()
+            return signature_help({
+                border = border,
+            })
+    end
 
     -- prevent inactive code from showing up in the "comment" color
     vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { link = "" })
