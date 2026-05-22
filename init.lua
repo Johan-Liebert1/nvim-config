@@ -99,6 +99,40 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 
+-- vim.api.nvim_set_hl(0, "@markup.link", {
+--   underline = false,
+--   undercurl = false,
+--   underdotted = false,
+--   underdouble = false,
+--   underdashed = false,
+-- })
+--
+-- vim.api.nvim_set_hl(0, "@markup.link.label", {
+--   underline = false,
+--   undercurl = false,
+--   underdotted = false,
+--   underdouble = false,
+--   underdashed = false,
+-- })
+--
+-- vim.api.nvim_set_hl(0, "@markup.link.url", {
+--   underline = false,
+--   undercurl = false,
+--   underdotted = false,
+--   underdouble = false,
+--   underdashed = false,
+-- })
+
+vim.api.nvim_set_hl(0, "@_label.markdown_inline", {
+  italic = false,
+  bold = true,
+  underline = false,
+  undercurl = false,
+  underdotted = false,
+  underdouble = false,
+  underdashed = false,
+})
+
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         vim.loop.spawn(vim.fn.expand("~/.config/nvim/script.sh"),

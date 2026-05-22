@@ -40,7 +40,7 @@ require("lazy").setup({
     -- },
 
     -- Auto pairs
-    { "jiangmiao/auto-pairs" },
+    -- { "jiangmiao/auto-pairs" },
 
     -- Icons
     { "nvim-tree/nvim-web-devicons" },
@@ -137,7 +137,6 @@ require("lazy").setup({
         config = function()
             require("render-markdown").setup({
                 enabled = false,
-
                 render_modes = { "n", "c", "t" },
             })
         end,

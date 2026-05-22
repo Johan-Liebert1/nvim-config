@@ -30,6 +30,6 @@ configs.setup({
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { "go", "lua", "c", "c++", "rust", "html", "javascript", "jsx", "tsx", "css" },
+  pattern = { "go", "lua", "c", "cpp", "rust", "html", "javascript", "jsx", "tsx", "css", "python", "yaml", "json" },
   callback = function() vim.treesitter.start() end,
 })
