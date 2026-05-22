@@ -29,7 +29,9 @@ configs.setup({
     },
 })
 
+-- set filetype? to see the autodetected filetype
+
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { "go", "lua", "c", "cpp", "rust", "html", "javascript", "jsx", "tsx", "css", "python", "yaml", "json" },
+  pattern = { "go", "lua", "c", "cpp", "rust", "html", "javascript", "javascriptreact", "typescriptreact", "css", "python", "yaml", "json" },
   callback = function() vim.treesitter.start() end,
 })
