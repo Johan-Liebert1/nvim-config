@@ -122,6 +122,14 @@ keymap("v", "`", ":s;\\%V.*\\%V;`&`<CR> | :noh <CR>", opts)
 -- gF also follows line numbers
 keymap("n", "gf", "gF", opts)
 
+-- Copy absolute file path to clipboard
+-- @" → unnamed register
+-- @0 → yank register
+-- @+ → system clipboard
+-- @* → primary selection clipboard (mainly X11/Linux)
+vim.cmd([[ command CopyPath let @+ = expand('%:p') ]])
+keymap("n", "<leader>cp", ":CopyPath<CR>", opts)
+
 vim.cmd([[ command JsFmt !prettier --write '%' --tab-width=4 --print-width 120 ]])
 vim.cmd([[ command PyFmt !yapf -i '%' ]])
 vim.cmd([[ command RsFmt !rustfmt '%' --edition 2024 ]])
