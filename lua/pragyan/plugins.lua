@@ -40,7 +40,7 @@ require("lazy").setup({
     -- },
 
     -- Auto pairs
-    -- { "jiangmiao/auto-pairs" },
+    { "jiangmiao/auto-pairs" },
 
     -- Icons
     { "nvim-tree/nvim-web-devicons" },
