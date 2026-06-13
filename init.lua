@@ -4,6 +4,8 @@
 
 -- require("vim._core.ui2").enable({})
 
+require("colors")
+
 require("pragyan.options")
 
 require("pragyan.plugins")
@@ -14,7 +16,7 @@ require("pragyan.plug-configs")
 require("pragyan.lsp")
 require("pragyan.keymaps")
 
-vim.cmd.colorscheme("materialOcean")
+-- vim.cmd.colorscheme("materialOcean")
 
 -- Hide all semantic highlights
 for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
