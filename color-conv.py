@@ -1,5 +1,3 @@
-import sys
-
 def parse_hi_line(line: str):
     line = line.strip()
 

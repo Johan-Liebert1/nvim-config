@@ -77,6 +77,12 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     command = "set filetype=glsl",
 })
 
+-- jenkinsfile
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.jenkinsfile",
+    command = "set filetype=groovy",
+})
+
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         if #vim.fn.argv() == 0 then
