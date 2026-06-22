@@ -79,7 +79,7 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
 
 -- jenkinsfile
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-    pattern = "*.jenkinsfile",
+    pattern = {"*.jenkinsfile",  "*.Jenkinsfile"},
     command = "set filetype=groovy",
 })
 
