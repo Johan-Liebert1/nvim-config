@@ -36,7 +36,8 @@ vim.api.nvim_create_autocmd('FileType', {
       "go", "lua", "c", "cpp", "rust", "html", "javascript", 
       "javascriptreact", "typescriptreact", "css", "python", 
       "yaml", "json", "markdown", "sh", "toml", "zsh", "jsdoc",
-      "just", "make", "cmake", "vue", "groovy", "todotxt", "todo"
+      "just", "make", "cmake", "vue", "groovy", "todotxt", "todo",
+      "typescript"
   },
   callback = function() vim.treesitter.start() end,
 })
